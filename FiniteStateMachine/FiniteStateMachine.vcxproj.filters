@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Build Events">
+      <UniqueIdentifier>{53241bdb-6046-4f94-a8c8-65a48e82e686}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\State">
+      <UniqueIdentifier>{61d43027-020e-4dbf-b9a2-9ea994a193c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Transition">
+      <UniqueIdentifier>{ca402aba-b9fb-4a31-bc24-03f3ee47ff54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Symbol">
+      <UniqueIdentifier>{a9a3dc39-c015-4a92-99dc-93b74eff383d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\State">
+      <UniqueIdentifier>{23174066-0c19-4323-93ed-a5492537d8bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Transition">
+      <UniqueIdentifier>{25166746-72d3-4028-b76e-24e65b8e6b23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Symbol">
+      <UniqueIdentifier>{535a26b3-b656-4816-b057-3b2406e3ce2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FiniteStateMachine.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractBehavioralState.h">
+      <Filter>Fichiers d%27en-tête\State</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractBehavioralTransition.h">
+      <Filter>Fichiers d%27en-tête\Transition</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractMatchSymbol.h">
+      <Filter>Fichiers d%27en-tête\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchAllSymbols.h">
+      <Filter>Fichiers d%27en-tête\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchListSymbols.h">
+      <Filter>Fichiers d%27en-tête\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchNotListSymbols.h">
+      <Filter>Fichiers d%27en-tête\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchNotSingleSymbol.h">
+      <Filter>Fichiers d%27en-tête\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchSingleSymbol.h">
+      <Filter>Fichiers d%27en-tête\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Fichiers d%27en-tête\State</Filter>
+    </ClInclude>
+    <ClInclude Include="StateCounter.h">
+      <Filter>Fichiers d%27en-tête\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Symbol.h">
+      <Filter>Fichiers d%27en-tête\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="Transition.h">
+      <Filter>Fichiers d%27en-tête\Transition</Filter>
+    </ClInclude>
+    <ClInclude Include="TransitionCounter.h">
+      <Filter>Fichiers d%27en-tête\Transition</Filter>
+    </ClInclude>
+    <ClInclude Include="TransitionOStream.h">
+      <Filter>Fichiers d%27en-tête\Transition</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AbstractBehavioralState.cpp">
+      <Filter>Fichiers sources\State</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractBehavioralTransition.cpp">
+      <Filter>Fichiers sources\Transition</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractMatchSymbol.cpp">
+      <Filter>Fichiers sources\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchAllSymbols.cpp">
+      <Filter>Fichiers sources\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchListSymbols.cpp">
+      <Filter>Fichiers sources\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchNotListSymbols.cpp">
+      <Filter>Fichiers sources\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchNotSingleSymbol.cpp">
+      <Filter>Fichiers sources\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchSingleSymbol.cpp">
+      <Filter>Fichiers sources\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Fichiers sources\State</Filter>
+    </ClCompile>
+    <ClCompile Include="StateCounter.cpp">
+      <Filter>Fichiers sources\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Transition.cpp">
+      <Filter>Fichiers sources\Transition</Filter>
+    </ClCompile>
+    <ClCompile Include="TransitionCounter.cpp">
+      <Filter>Fichiers sources\Transition</Filter>
+    </ClCompile>
+    <ClCompile Include="TransitionOStream.cpp">
+      <Filter>Fichiers sources\Transition</Filter>
+    </ClCompile>
+    <ClCompile Include="FiniteStateMachine.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tools\PostBuildEventDebug.bat">
+      <Filter>Build Events</Filter>
+    </None>
+    <None Include="tools\PostBuildEventRelease.bat">
+      <Filter>Build Events</Filter>
+    </None>
+  </ItemGroup>
+</Project>
