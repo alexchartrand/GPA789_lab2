@@ -15,9 +15,6 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,28 +22,16 @@ QT_BEGIN_NAMESPACE
 class Ui_XtractCguiClass
 {
 public:
-    QMenuBar *menuBar;
-    QToolBar *mainToolBar;
     QWidget *centralWidget;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *XtractCguiClass)
     {
         if (XtractCguiClass->objectName().isEmpty())
             XtractCguiClass->setObjectName(QStringLiteral("XtractCguiClass"));
-        XtractCguiClass->resize(600, 400);
-        menuBar = new QMenuBar(XtractCguiClass);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        XtractCguiClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(XtractCguiClass);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        XtractCguiClass->addToolBar(mainToolBar);
+        XtractCguiClass->resize(842, 582);
         centralWidget = new QWidget(XtractCguiClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         XtractCguiClass->setCentralWidget(centralWidget);
-        statusBar = new QStatusBar(XtractCguiClass);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        XtractCguiClass->setStatusBar(statusBar);
 
         retranslateUi(XtractCguiClass);
 
