@@ -1,4 +1,5 @@
 #include "XtractCgui.h"
+#include "AboutTab.h"
 
 #include <qstatusbar.h>
 
@@ -16,6 +17,7 @@ XtractCgui::XtractCgui(QWidget *parent)
 	mCppCommenteViewer->setFileSuffixFilter(QStringList() << "cpp" << "c" << "hpp" << "h");
 
 	mTab->addTab(mCppCommenteViewer, tr("Consulter le fichier source et ses commentaires"));
+	mTab->addTab(new AboutTab, tr("About"));
 	
 	mSplitter->addWidget(mDirectorySel);
 	mSplitter->addWidget(mTab);

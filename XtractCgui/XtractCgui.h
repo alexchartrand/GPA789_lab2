@@ -29,3 +29,4 @@ private:
 };
 
 #endif // XTRACTCGUI_H
+
