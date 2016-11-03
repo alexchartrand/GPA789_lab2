@@ -14,7 +14,7 @@ XtractCgui::XtractCgui(QWidget *parent)
 	mSplitter = new QSplitter(Qt::Orientation::Horizontal);
 	mTab = new QTabWidget();
 	mCppCommenteViewer = new QCppCommentViewer();
-	//mQSelectedFileList = new QSelectedFileList(mDirectorySel);
+	mQSelectedFileList = new QSelectedFileList(mDirectorySel);
 	mQGenereFile = new QGenereFile();
 
 	mCppCommenteViewer->setFileSuffixFilter(QStringList() << "cpp" << "c" << "hpp" << "h");

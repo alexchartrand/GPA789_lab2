@@ -3,27 +3,33 @@
 #include "qradiobutton.h"
 #include "qcheckbox.h"
 #include "qpushbutton.h"
-#include "qlabel.h"
+#include <qlabel>
 #include "QSelectedFileList.h"
+#include <qspinbox>
 
 
 QGenereFile::QGenereFile(QWidget *parent)
 {
 
-	//mQSelectedFileList = new QSelectedFileList();
-	QGridLayout *grid = new QGridLayout;
+	mDirectorySel = new QDirectorySelector();
 
-	//grid->addWidget(mQSelectedFileList, 0, 0);
-	grid->addWidget(createFirstExclusiveGroup(), 0, 1);
-	grid->addWidget(createSecondExclusiveGroup(), 1, 1);
-	grid->addWidget(createNonExclusiveGroup(), 2, 1);
+	mQSelectedFileList = new QSelectedFileList(mDirectorySel);
+	QHBoxLayout *hbox = new QHBoxLayout;
+	QVBoxLayout *vbox = new QVBoxLayout;
+
+	hbox->addWidget(mQSelectedFileList);
+	hbox->addLayout(vbox);
+
+	vbox->addWidget(createFirstExclusiveGroup());
+	vbox->addWidget(createSecondExclusiveGroup());
+	vbox->addWidget(createNonExclusiveGroup());
 
 
-	QCheckBox *checkBox1 = new QCheckBox(tr("Inclure les statistique"));
-	grid->addWidget(checkBox1, 3, 1);
+	QCheckBox *checkBox1 = new QCheckBox(tr("Inclure les statistiques"));
+	vbox->addWidget(checkBox1);
 	QPushButton *pushButton = new QPushButton("&Générer",this);
-	grid->addWidget(pushButton, 3, 2);
-	setLayout(grid);
+	vbox->addWidget(pushButton);
+	setLayout(hbox);
 
 }
 
@@ -31,16 +37,18 @@ QGroupBox *QGenereFile::createFirstExclusiveGroup()
 {
 
 	QGroupBox *groupBox = new QGroupBox(tr("Dossiers de sortie"));
-	QRadioButton *fichier_sortie1 = new QRadioButton(tr("Utiliser le dossier source"));
+	mFichierSortie1 = new QRadioButton(tr("Utiliser le dossier source"));
 	QRadioButton *fichier_sortie2 = new QRadioButton(tr("Spécifier un dossier de sortie"));
 	QLabel *path = new QLabel(this);
 	path->setText("Chemin");
 	QPushButton *selectionner = new QPushButton("&Sélectionner", this);
 	QVBoxLayout *vbox = new QVBoxLayout;
-	vbox->addWidget(fichier_sortie1);
-	vbox->addWidget(fichier_sortie2);
+	QHBoxLayout *hbox = new QHBoxLayout;
+	hbox->addWidget(fichier_sortie2);
+	hbox->addWidget(selectionner);
+	vbox->addWidget(mFichierSortie1);
+	vbox->addLayout(hbox);
 	vbox->addWidget(path);
-	vbox->addWidget(selectionner, 0, 1);
 	groupBox->setLayout(vbox);
 
 	return groupBox;

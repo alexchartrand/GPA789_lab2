@@ -163,8 +163,11 @@
     <ClCompile Include="QCppSyntaxHighlighter.cpp" />
     <ClCompile Include="QCustomHeaderFileSystemModel.cpp" />
     <ClCompile Include="QDirectorySelector.cpp" />
+    <ClCompile Include="QDossierSortie.cpp" />
+    <ClCompile Include="QExtentionFichier.cpp" />
     <ClCompile Include="QGenereFile.cpp" />
     <ClCompile Include="QLineTextEdit.cpp" />
+    <ClCompile Include="QNomFichierSortie.cpp" />
     <ClCompile Include="QSelectedFileList.cpp" />
     <ClCompile Include="XtractCgui.cpp" />
   </ItemGroup>
@@ -193,6 +196,9 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="QDossierSortie.h" />
+    <ClInclude Include="QExtentionFichier.h" />
+    <ClInclude Include="QNomFichierSortie.h" />
     <CustomBuild Include="QGenereFile.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing QGenereFile.h...</Message>

@@ -2,9 +2,11 @@
 #define QGENEREFILE_H
 
 #include <QWidget>
-#include <qgroupbox.h>
+#include <qgroupbox>
 
 #include "QSelectedFileList.h"
+#include "QDirectorySelector.h"
+#include <qradiobutton>
 
 class QGenereFile : public QWidget
 
@@ -16,11 +18,16 @@ public :
 	~QGenereFile() = default;
 
 private :
+
 	QSelectedFileList *mQSelectedFileList;
+	QDirectorySelector *mDirectorySel;
+
+	QRadioButton *mFichierSortie1;
+
 	QGroupBox *createFirstExclusiveGroup();
 	QGroupBox *createSecondExclusiveGroup();
 	QGroupBox *createNonExclusiveGroup();
-	QGroupBox *createPushButtonGroup();
+
 };
 
 #endif // QGENEREFILE_H
