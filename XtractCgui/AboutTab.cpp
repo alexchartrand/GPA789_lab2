@@ -25,5 +25,17 @@ AboutTab::AboutTab(QWidget *parent)
 
 void AboutTab::showMessageBox()
 {
-	QMessageBox::about(this, "Allo", R"#(...)#");
+
+	QMessageBox::about(this, "À propos de XtractC", R"#(XtractC est un logiciel d'extraction de commentaires du langage C++.
+
+Ce programme a été réalisé par :
+- Alexandre Chratrand
+- Jérôme Combet-Blanc
+
+Dans le cadre du cours :
+- GPA 789 - Analyse et conception orientées objet
+- Laboratoire 2
+
+Version 1.0)#");
+	//about.setIconPixmap()
 }

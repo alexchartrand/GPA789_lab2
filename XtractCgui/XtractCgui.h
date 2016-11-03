@@ -8,6 +8,8 @@
 #include "ui_XtractCgui.h"
 #include "QDirectorySelector.h"
 #include "QCppCommentViewer.h"
+#include "QGenereFile.h"
+#include "QSelectedFileList.h"
 
 class XtractCgui : public QMainWindow
 {
@@ -25,6 +27,8 @@ private:
 	QDirectorySelector *mDirectorySel;
 	QTabWidget *mTab;
 	QCppCommentViewer *mCppCommenteViewer;
+	QGenereFile *mQGenereFile;
+	QSelectedFileList *mQSelectedFileList;
 	
 };
 
