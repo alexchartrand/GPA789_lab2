@@ -1,10 +1,12 @@
 #include "QGenereFile.h"
-#include "qgridlayout.h"
-#include "qradiobutton.h"
-#include "qcheckbox.h"
-#include "qpushbutton.h"
-#include <qlabel>
 #include "QSelectedFileList.h"
+
+#include <qgridlayout.h>
+#include <qlayout.h>
+#include <qradiobutton.h>
+#include <qcheckbox>
+#include <qpushbutton>
+#include <qlabel>
 #include <qspinbox>
 
 
@@ -31,7 +33,9 @@ QGenereFile::QGenereFile(QWidget *parent)
 	hbox1->addLayout(vbox);
 
 	vbox->addWidget(mDossierSortie);
+	vbox->addStretch();
 	vbox->addWidget(mNomFichierSortie);
+	vbox->addStretch();
 	vbox->addWidget(mExtensionFichier);
 	vbox->addLayout(hbox2);
 
