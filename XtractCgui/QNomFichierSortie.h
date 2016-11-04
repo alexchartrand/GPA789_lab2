@@ -11,8 +11,11 @@ public:
 	QNomFichierSortie(QWidget *parent = nullptr);
 	~QNomFichierSortie();
 
+	QString getNomFichier();
+
 private:
 	
+	QString mNomFichier;
 };
 
 #endif // QNOMFICHIERSORTIE_H
