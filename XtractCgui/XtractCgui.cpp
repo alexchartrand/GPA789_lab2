@@ -20,7 +20,7 @@ XtractCgui::XtractCgui(QWidget *parent)
 	mCppCommenteViewer->setFileSuffixFilter(QStringList() << "cpp" << "c" << "hpp" << "h");
 
 	mTab->addTab(mCppCommenteViewer, tr("Consulter le fichier source et ses commentaires"));
-	mTab->addTab(mQGenereFile, tr("Générer les fichers de commentaire"));
+	mTab->addTab(mQGenereFile, tr("GÃ©nÃ©rer les fichers de commentaire"));
 	mTab->addTab(new AboutTab, tr("About"));
 	
 	mSplitter->addWidget(mDirectorySel);

@@ -1,24 +1,18 @@
 #ifndef QNOMFICHIERSORTIE_H
 #define QNOMFICHIERSORTIE_H
 
-#include <qgroupbox>
+#include <QGroupBox>
 
 class QNomFichierSortie : public QGroupBox
 {
+	Q_OBJECT
+
 public:
-QNomFichierSortie : public QGroupebox();
-	~QNomFichierSortie : public QGroupebox();
+	QNomFichierSortie(QWidget *parent = nullptr);
+	~QNomFichierSortie();
 
 private:
-
+	
 };
 
-QNomFichierSortie: public QGroupebox::QDossierSortie : public QGroupebox()
-{
-}
-
-			   QNomFichierSortie: public QGroupebox::~QDossierSortie : public QGroupebox()
-			   {
-			   }
-
-#endif //QNOMFICHIERSORTIE_H
+#endif // QNOMFICHIERSORTIE_H

@@ -1,24 +1,18 @@
 #ifndef QEXTENTIONFICHIER_H
 #define QEXTENTIONFICHIER_H
 
-#include <qgroupbox>
+#include <QGroupBox>
 
 class QExtentionFichier : public QGroupBox
 {
+	Q_OBJECT
+
 public:
-	QExtentionFichier : public QGroupebox();
-	~QExtentionFichier : public QGroupebox();
+	QExtentionFichier(QWidget *parent = nullptr);
+	~QExtentionFichier();
 
 private:
-
+	
 };
 
-QExtentionFichier: public QGroupebox::QDossierSortie : public QGroupebox()
-{
-}
-
-QExtentionFichier: public QGroupebox::~QDossierSortie : public QGroupebox()
-			{
-			}
-
-#endif //QEXTENTIONFICHIER_H
+#endif // QEXTENTIONFICHIER_H

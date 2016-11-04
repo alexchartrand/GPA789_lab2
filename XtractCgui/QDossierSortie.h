@@ -1,24 +1,18 @@
 #ifndef QDOSSIERSORTIE_H
 #define QDOSSIERSORTIE_H
 
-#include <qgroupbox>
+#include <QGroupBox>
 
 class QDossierSortie : public QGroupBox
 {
+	Q_OBJECT
+
 public:
-	QDossierSortie : public QGroupebox();
-	~QDossierSortie : public QGroupebox();
+	QDossierSortie(QWidget *parent = nullptr);
+	~QDossierSortie();
 
 private:
-
+	
 };
 
-QDossierSortie : public QGroupebox::QDossierSortie : public QGroupebox()
-{
-}
-
-QDossierSortie : public QGroupebox::~QDossierSortie : public QGroupebox()
-{
-}
-
-#endif //QDOSSIERSORTIE_H
+#endif // QDOSSIERSORTIE_H

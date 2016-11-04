@@ -3,13 +3,15 @@
 
 #include <QWidget>
 #include <qgroupbox>
+#include <qradiobutton>
 
 #include "QSelectedFileList.h"
 #include "QDirectorySelector.h"
-#include <qradiobutton>
+#include "QDossierSortie.h"
+#include "QExtentionFichier.h"
+#include "QNomFichierSortie.h"
 
 class QGenereFile : public QWidget
-
 {
 	Q_OBJECT
 
@@ -21,6 +23,9 @@ private :
 
 	QSelectedFileList *mQSelectedFileList;
 	QDirectorySelector *mDirectorySel;
+	QDossierSortie *mDossierSortie;
+	QExtentionFichier *mExtensionFichier;
+	QNomFichierSortie *mNomFichierSortie;
 
 	QRadioButton *mFichierSortie1;
 
