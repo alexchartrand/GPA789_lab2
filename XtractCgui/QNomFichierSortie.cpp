@@ -19,9 +19,8 @@ QNomFichierSortie::QNomFichierSortie(QWidget *parent)
 	QHBoxLayout *hbox2 = new QHBoxLayout;
 	QLabel *texte1 = new QLabel("Préfixe du nom de fichier");
 	QLabel *texte2 = new QLabel("Débuter la numérotation à");
-	QSpinBox *deb_num = new QSpinBox;
-	QLineEdit *prefixe = new QLineEdit;
-	QString mPrefixe = prefixe->text();
+	deb_num = new QSpinBox;
+	prefixe = new QLineEdit;
 	
 
 
@@ -64,6 +63,11 @@ QNomFichierSortie::~QNomFichierSortie()
 QString QNomFichierSortie::getNomFichier()
 {
 
-	//QString mPrefixe = prefixe->text();
-	//return mPrefixe;
+	QString mPrefixe = prefixe->text();
+	return mPrefixe;
+}
+int QNomFichierSortie::getDebutNumerotation()
+{
+	int mDeb_num = deb_num->value();
+	return mDeb_num;
 }
