@@ -2,6 +2,7 @@
 #define QEXTENTIONFICHIER_H
 
 #include <QGroupBox>
+#include <qlineedit>
 
 class QExtentionFichier : public QGroupBox
 {
@@ -13,6 +14,8 @@ public:
 
 private:
 	
+	QLineEdit *extention;
+	QString mExtentionFichier;
 };
 
 #endif // QEXTENTIONFICHIER_H

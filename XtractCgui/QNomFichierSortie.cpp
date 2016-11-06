@@ -23,7 +23,6 @@ QNomFichierSortie::QNomFichierSortie(QWidget *parent)
 	prefixe = new QLineEdit;
 	
 
-
 	connect(nom_fichier_sortie2, &QRadioButton::toggled,
 		texte1, &QLabel::setEnabled);
 	connect(nom_fichier_sortie2, &QRadioButton::toggled,
@@ -62,10 +61,10 @@ QNomFichierSortie::~QNomFichierSortie()
 
 QString QNomFichierSortie::getNomFichier()
 {
-
 	QString mPrefixe = prefixe->text();
 	return mPrefixe;
 }
+
 int QNomFichierSortie::getDebutNumerotation()
 {
 	int mDeb_num = deb_num->value();
