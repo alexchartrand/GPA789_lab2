@@ -1,5 +1,6 @@
 #include "QGenereFile.h"
 #include "QSelectedFileList.h"
+#include "QNomFichierSortie.h"
 
 #include <qgridlayout.h>
 #include <qlayout.h>
@@ -8,6 +9,7 @@
 #include <qpushbutton>
 #include <qlabel>
 #include <qspinbox>
+#include <qmessagebox>
 
 
 QGenereFile::QGenereFile(QWidget *parent)
@@ -29,6 +31,9 @@ QGenereFile::QGenereFile(QWidget *parent)
 	QCheckBox *checkBox1 = new QCheckBox(tr("Inclure les statistiques"));
 	QPushButton *pushButton = new QPushButton("&Générer", this);
 
+	connect(pushButton, &QPushButton::clicked,
+		this, &QGenereFile::Appelparametre);
+
 	hbox1->addWidget(mQSelectedFileList);
 	hbox1->addLayout(vbox);
 
@@ -46,53 +51,20 @@ QGenereFile::QGenereFile(QWidget *parent)
 
 }
 
-QGroupBox *QGenereFile::createFirstExclusiveGroup()
+void QGenereFile::Appelparametre()
 {
+	
 
-	QGroupBox *groupBox = new QGroupBox(tr("Dossiers de sortie"));
-	mFichierSortie1 = new QRadioButton(tr("Utiliser le dossier source"));
-	QRadioButton *fichier_sortie2 = new QRadioButton(tr("Spécifier un dossier de sortie"));
-	QLabel *path = new QLabel(this);
-	path->setText("Chemin");
-	QPushButton *selectionner = new QPushButton("&Sélectionner", this);
-	QVBoxLayout *vbox = new QVBoxLayout;
-	QHBoxLayout *hbox = new QHBoxLayout;
-	hbox->addWidget(fichier_sortie2);
-	hbox->addWidget(selectionner);
-	vbox->addWidget(mFichierSortie1);
-	vbox->addLayout(hbox);
-	vbox->addWidget(path);
-	groupBox->setLayout(vbox);
+	QString prefixe = mNomFichierSortie->getNomFichier();
+	int deb_num = mNomFichierSortie->getDebutNumerotation();
+	QString extension = mExtensionFichier->extentionFiles();
 
-	return groupBox;
-}
 
-QGroupBox *QGenereFile::createSecondExclusiveGroup()
-{
 
-	QGroupBox *groupBox = new QGroupBox(tr("Nom du fichier de sortie"));
-	QRadioButton *nom_fichier_sortie1 = new QRadioButton(tr("Utiliser le même nom de fichier"));
-	QRadioButton *nom_fichier_sortie2 = new QRadioButton(tr("Utiliser un nom de fichier avec numérotation automatique"));
-	QVBoxLayout *vbox = new QVBoxLayout;
-	vbox->addWidget(nom_fichier_sortie1);
-	vbox->addWidget(nom_fichier_sortie2);
-	groupBox->setLayout(vbox);
-
-	return groupBox;
-
-}
-
-QGroupBox *QGenereFile::createNonExclusiveGroup()
-{
-
-	QGroupBox *groupBox = new QGroupBox(tr("Extension du fichier de sortie"));
-	QRadioButton *extension_fichier1 = new QRadioButton(tr("Utiliser l'extension XtractC"));
-	QRadioButton *extension_fichier2 = new QRadioButton(tr("Spécifier l'extension"));
-	QVBoxLayout *vbox = new QVBoxLayout;
-	vbox->addWidget(extension_fichier1);
-	vbox->addWidget(extension_fichier2);
-	groupBox->setLayout(vbox);
-
-	return groupBox;
+	QMessageBox Reponse;
+	Reponse.setText(prefixe);
+	Reponse.setText(QString::number(deb_num));
+	Reponse.setInformativeText(extension);
+	Reponse.exec();
 
 }

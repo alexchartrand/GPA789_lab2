@@ -5,6 +5,7 @@
 #include <qgroupbox>
 #include <qradiobutton>
 
+
 #include "QSelectedFileList.h"
 #include "QDirectorySelector.h"
 #include "QDossierSortie.h"
@@ -27,12 +28,9 @@ private :
 	QExtentionFichier *mExtensionFichier;
 	QNomFichierSortie *mNomFichierSortie;
 
-	QRadioButton *mFichierSortie1;
+private slots :
 
-	QGroupBox *createFirstExclusiveGroup();
-	QGroupBox *createSecondExclusiveGroup();
-	QGroupBox *createNonExclusiveGroup();
-
+	void Appelparametre();
 };
 
 #endif // QGENEREFILE_H
