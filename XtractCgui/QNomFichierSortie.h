@@ -4,6 +4,7 @@
 #include <QGroupBox>
 #include <qlineedit>
 #include <qspinbox>
+#include <qradiobutton>
 
 class QNomFichierSortie : public QGroupBox
 {
@@ -20,6 +21,8 @@ private:
 	
 	QLineEdit *prefixe;
 	QSpinBox *deb_num;
+	QRadioButton *nom_fichier_sortie1;
+	QRadioButton *nom_fichier_sortie2;
 
 	//Variable pour la récupération des information de ce GroupBox
 	QString mNomFichier;

@@ -12,8 +12,8 @@ QNomFichierSortie::QNomFichierSortie(QWidget *parent)
 {
 
 	//Creation des variables
-	QRadioButton *nom_fichier_sortie1 = new QRadioButton(tr("Utiliser le même nom de fichier"));
-	QRadioButton *nom_fichier_sortie2 = new QRadioButton(tr("Utiliser un nom de fichier avec numérotation automatique"));
+	nom_fichier_sortie1 = new QRadioButton(tr("Utiliser le même nom de fichier"));
+	nom_fichier_sortie2 = new QRadioButton(tr("Utiliser un nom de fichier avec numérotation automatique"));
 	QVBoxLayout *vbox1 = new QVBoxLayout;
 	QVBoxLayout *vbox2 = new QVBoxLayout;
 	QHBoxLayout *hbox1 = new QHBoxLayout;
@@ -64,7 +64,15 @@ QNomFichierSortie::~QNomFichierSortie()
 //Fonction qui va retourner le prefixe du nom du fichier
 QString QNomFichierSortie::getNomFichier()
 {
-	QString mPrefixe = prefixe->text();
+	QString mPrefixe;
+
+	if (nom_fichier_sortie2->isChecked() == true){
+		mPrefixe = prefixe->text();
+	}
+	else
+	{
+
+	}
 	return mPrefixe;
 }
 
@@ -72,6 +80,12 @@ QString QNomFichierSortie::getNomFichier()
 //Fonction qui retourne la valeur de debut de numerotation
 int QNomFichierSortie::getDebutNumerotation()
 {
-	int mDeb_num = deb_num->value();
+	int mDeb_num;
+	if (nom_fichier_sortie2->isChecked() == true){
+		mDeb_num = deb_num->value();
+	}
+	else{
+		mDeb_num = 1;
+	}
 	return mDeb_num;
 }
