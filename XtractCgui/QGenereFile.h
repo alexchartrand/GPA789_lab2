@@ -11,6 +11,7 @@
 #include "QDossierSortie.h"
 #include "QExtentionFichier.h"
 #include "QNomFichierSortie.h"
+#include "XtractC.h"
 
 class QGenereFile : public QWidget
 {
@@ -25,8 +26,14 @@ private :
 	QSelectedFileList *mQSelectedFileList;
 	QDirectorySelector *mDirectorySel;
 	QDossierSortie *mDossierSortie;
+	XtractC mXtractC;
 	QExtentionFichier *mExtensionFichier;
 	QNomFichierSortie *mNomFichierSortie;
+	QCheckBox *mDisplayStatistics;
+
+signals :
+
+	void eventSignaled(QString const & message, int timeOut = 3500);
 
 private slots :
 
