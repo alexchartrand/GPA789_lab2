@@ -1,4 +1,4 @@
-#include "QGenereFile.h"
+﻿#include "QGenereFile.h"
 #include "QSelectedFileList.h"
 #include "QNomFichierSortie.h"
 
@@ -59,12 +59,28 @@ void QGenereFile::Appelparametre()
 	int deb_num = mNomFichierSortie->getDebutNumerotation();
 	QString extension = mExtensionFichier->extentionFiles();
 
+	//QStringList fichierSource = mQSelectedFileList->selectedFiles();
+	//int numberOfFile = mQSelectedFileList->selectedFilesCount();
 
+	//for (int i = 0; i < fichierSource.size(); i++){
+	//	QString outputName("U:\PRIVATE\test.xtrc");
+	//	try {
+	//		std::stringstream strStreamIn(fichierSource.at(i).toStdString());
+	//		std::stringstream strStreamOut(outputName.toStdString());
+	//		mXtractC.setup(strStreamIn, strStreamOut);
+	//		mXtractC.process(mDisplayStatistics->isChecked());
+	//	}
+	//	catch (XtractC::ParamException const & exception)
+	//	{
+	//		emit eventSignaled("XtractC exception caught : " + QString::fromStdString(exception.what()));
+	//	}
+	//	catch (XtractC::Exception const & exception) {
+	//		emit eventSignaled("XtractC exception caught : " + QString::fromStdString(exception.what()));
+	//	}
+	//	catch (exception const & exception) {
+	//		emit eventSignaled("XtractC exception caught : " + QString::fromStdString(exception.what()));
+	//	}
+	//}
 
-	QMessageBox Reponse;
-	Reponse.setText(prefixe);
-	Reponse.setText(QString::number(deb_num));
-	Reponse.setInformativeText(extension);
-	Reponse.exec();
 
 }
