@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="XtractCgui">
+    <qresource prefix="/XtractCgui">
+        <file>Resource/icon.png</file>
     </qresource>
 </RCC>

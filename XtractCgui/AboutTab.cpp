@@ -25,8 +25,14 @@ AboutTab::AboutTab(QWidget *parent)
 
 void AboutTab::showMessageBox()
 {
+	QPixmap image = QPixmap("Resource/icon.png");
+	
 
-	QMessageBox::about(this, "À propos de XtractC", R"#(XtractC est un logiciel d'extraction de commentaires du langage C++.
+	QMessageBox  about;
+	about.setIconPixmap(image);
+	about.setWindowTitle("À propos de XtractC");
+	about.setWindowIcon(image);
+	about.setText(R"#(XtractC est un logiciel d'extraction de commentaires du langage C++.
 
 Ce programme a été réalisé par :
 - Alexandre Chratrand
@@ -37,5 +43,7 @@ Dans le cadre du cours :
 - Laboratoire 2
 
 Version 1.0)#");
-	//about.setIconPixmap()
+	
+	about.exec();
+	
 }
