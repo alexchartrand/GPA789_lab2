@@ -15,7 +15,7 @@ XtractCgui::XtractCgui(QWidget *parent)
 	mTab = new QTabWidget();
 	mCppCommenteViewer = new QCppCommentViewer();
 	mQSelectedFileList = new QSelectedFileList(mDirectorySel);
-	mQGenereFile = new QGenereFile();
+	mQGenereFile = new QGenereFile(mDirectorySel);
 
 	mCppCommenteViewer->setFileSuffixFilter(QStringList() << "cpp" << "c" << "hpp" << "h");
 

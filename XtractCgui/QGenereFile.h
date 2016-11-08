@@ -17,7 +17,7 @@ class QGenereFile : public QWidget
 	Q_OBJECT
 
 public :
-	QGenereFile(QWidget *parent = nullptr);
+	QGenereFile(QDirectorySelector *DirectorySel, QWidget *parent = nullptr);
 	~QGenereFile() = default;
 
 private :

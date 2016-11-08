@@ -1,4 +1,4 @@
-﻿#include "QGenereFile.h"
+#include "QGenereFile.h"
 #include "QSelectedFileList.h"
 #include "QNomFichierSortie.h"
 
@@ -12,10 +12,10 @@
 #include <qmessagebox>
 
 
-QGenereFile::QGenereFile(QWidget *parent)
+QGenereFile::QGenereFile(QDirectorySelector *DirectorySel,QWidget *parent)
 {
 
-	mDirectorySel = new QDirectorySelector();
+	mDirectorySel = DirectorySel;
 
 	mQSelectedFileList = new QSelectedFileList(mDirectorySel);
 	mQSelectedFileList->setFileSuffixFilter(QStringList() << "cpp" << "c" << "hpp" << "h");
@@ -29,7 +29,7 @@ QGenereFile::QGenereFile(QWidget *parent)
 	mNomFichierSortie = new QNomFichierSortie;
 
 	QCheckBox *checkBox1 = new QCheckBox(tr("Inclure les statistiques"));
-	QPushButton *pushButton = new QPushButton("&Générer", this);
+	QPushButton *pushButton = new QPushButton("Générer", this);
 
 	connect(pushButton, &QPushButton::clicked,
 		this, &QGenereFile::Appelparametre);
