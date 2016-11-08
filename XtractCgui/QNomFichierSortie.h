@@ -14,19 +14,19 @@ public:
 	QNomFichierSortie(QWidget *parent = nullptr);
 	~QNomFichierSortie();
 
-	// Recuperer le nom du fichier
 	QString getNomFichier();
-	// Retourne le numero qui va débuter la numérotation
 	int getDebutNumerotation();
 
 private:
 	
-	QLineEdit *mPrefixe;
-	QSpinBox *mDebNum;
-	QRadioButton *mNomFichierSortie1;
-	QRadioButton *mNomFichierSortie2;
-	QString mNomFichier;
+	QLineEdit *prefixe;
+	QSpinBox *deb_num;
+	QRadioButton *nom_fichier_sortie1;
+	QRadioButton *nom_fichier_sortie2;
 
+	//Variable pour la récupération des information de ce GroupBox
+	QString mNomFichier;
+	int mDebNum;
 };
 
 #endif // QNOMFICHIERSORTIE_H
