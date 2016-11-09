@@ -40,13 +40,14 @@ QGenereFile::QGenereFile(QDirectorySelector *DirectorySel,QWidget *parent)
 
 	hbox1->addWidget(mQSelectedFileList);
 	hbox1->addLayout(vbox);
-
 	vbox->addWidget(mDossierSortie);
-	vbox->addStretch();
 	vbox->addWidget(mNomFichierSortie);
-	vbox->addStretch();
 	vbox->addWidget(mExtensionFichier);
+	vbox->addStretch();
+
+
 	vbox->addLayout(hbox2);
+	
 
 	hbox2->addWidget(mDisplayStatistics);
 	hbox2->addWidget(pushButton);
@@ -57,19 +58,20 @@ QGenereFile::QGenereFile(QDirectorySelector *DirectorySel,QWidget *parent)
 
 void QGenereFile::Appelparametre()
 {
-
+	// On va aller chercher les configuration dans chacun des QGroupBox
 	QString prefixe = mNomFichierSortie->getNomFichier();
 	int deb_num = mNomFichierSortie->getDebutNumerotation();
 	QString extension = mExtensionFichier->extentionFiles();
-
 	QStringList fichierSource = mQSelectedFileList->selectedFiles();
 	int numberOfFile = mQSelectedFileList->selectedFilesCount();
 
+	// Permet la sortie du document en fonction des configurations precedentes
 	for (int i = 0; i < fichierSource.size(); i++){
-		QString outputName("U:\PRIVATE\test.xtrc");
+		// On viens ajouter à notre fichier de sortie l'extention désiré
+		QString outputName(fichierSource.value(i) += extension);
 		try {
-			std::stringstream strStreamIn(fichierSource.at(i).toStdString());
-			std::stringstream strStreamOut(outputName.toStdString());
+			std::string strStreamIn(fichierSource.at(i).toStdString());
+			std::string strStreamOut(outputName.toStdString());
 			mXtractC.setup(strStreamIn, strStreamOut);
 			mXtractC.process(mDisplayStatistics->isChecked());
 		}

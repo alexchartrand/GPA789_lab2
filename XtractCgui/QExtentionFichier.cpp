@@ -45,11 +45,11 @@ QString QExtentionFichier::extentionFiles() const
 
 	if (extension_fichier1->isChecked() == true)
 	{
-		ext = "xtract";
+		ext = ".xtract";
 	}
 	else
 	{
-		ext = extention->text();
+		ext = "."+extention->text();
 	}
 	return ext;
 }
