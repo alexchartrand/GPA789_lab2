@@ -44,4 +44,7 @@ void XtractCgui::connectWidget()
 
 	connect(mCppCommenteViewer, &QCppCommentViewer::eventSignaled,
 		statusBar(), &QStatusBar::showMessage);
+
+	connect(mQGenereFile, &QGenereFile::eventSignaled,
+		statusBar(), &QStatusBar::showMessage);
 }

@@ -2,6 +2,8 @@
 #define QDOSSIERSORTIE_H
 
 #include <QGroupBox>
+#include <qlabel>
+
 
 
 class QDossierSortie : public QGroupBox
@@ -11,20 +13,20 @@ class QDossierSortie : public QGroupBox
 public:
 	QDossierSortie(QWidget *parent = nullptr);
 	~QDossierSortie();
-
 	QString getDirectory() { return mDir; }
 
 private:
 	void slectionClicked();
-	
+	QLabel *mPath;
 	QString mDir;
 
 signals:
-	// Signal émis lorsque d'un évènement pouvant être signalé à l'usager sur la barre de status.
+	
 	void folderSelected(QString const & folder);
 
 private slots:
-	void clearDir() { mDir = ""; emit folderSelected(mDir); }
+	void clearDir() { mDir = ""; }
+	void reloadPath() { mDir = mPath->text(); }
 };
 
 #endif // QDOSSIERSORTIE_H

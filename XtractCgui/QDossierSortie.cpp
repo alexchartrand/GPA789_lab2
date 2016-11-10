@@ -1,11 +1,11 @@
 #include "QDossierSortie.h"
 
-#include <qlabel>
+
 #include <qpushbutton>
 #include <qradiobutton.h>
 #include <qlayout.h>
 #include <QFileDialog>
-#include <qdir>
+
 
 QDossierSortie::QDossierSortie(QWidget *parent)
 : QGroupBox(tr("Dossiers de sortie"), parent), mDir("")
@@ -13,8 +13,8 @@ QDossierSortie::QDossierSortie(QWidget *parent)
 	QRadioButton *fichierSortie1 = new QRadioButton(tr("Utiliser le dossier source"));
 	QRadioButton *fichierSortie2 = new QRadioButton(tr("Spécifier un dossier de sortie"));
 	fichierSortie1->setChecked(true);
-	QLabel *path = new QLabel(this);
-	QPushButton *selectionner = new QPushButton("&Sélectionner", this);
+	mPath = new QLabel("C:/", this);
+	QPushButton *selectionner = new QPushButton("Sélectionner", this);
 	selectionner->setEnabled(false);
 
 	QVBoxLayout *vbox = new QVBoxLayout;
@@ -24,7 +24,7 @@ QDossierSortie::QDossierSortie(QWidget *parent)
 	hbox->addWidget(selectionner);
 	vbox->addWidget(fichierSortie1);
 	vbox->addLayout(hbox);
-	vbox->addWidget(path);
+	vbox->addWidget(mPath);
 	setLayout(vbox);
 
 	connect(fichierSortie1, &QRadioButton::toggled,
@@ -33,11 +33,12 @@ QDossierSortie::QDossierSortie(QWidget *parent)
 	connect(fichierSortie2, &QRadioButton::toggled,
 		selectionner, &QPushButton::setEnabled);
 
+	connect(fichierSortie2, &QRadioButton::toggled,
+		this, &QDossierSortie::reloadPath);
+
 	connect(selectionner, &QPushButton::clicked,
 		this, &QDossierSortie::slectionClicked);
 
-	connect(this, &QDossierSortie::folderSelected,
-		path, &QLabel::setText);
 }
 
 QDossierSortie::~QDossierSortie()
@@ -49,8 +50,8 @@ void QDossierSortie::slectionClicked()
 {
 
 	mDir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-		QDir::currentPath(),
-		QFileDialog::ShowDirsOnly
-		| QFileDialog::DontResolveSymlinks);
-	emit folderSelected(mDir);
+		mPath->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+
+	mPath->setText(mDir);
+	
 }
