@@ -27,6 +27,17 @@
 //! \brief		Classe gérant le GroupBox pour l'extension du fichier de sortie
 //! \details	Cette classe fait partie de la solution XtractCgui 
 //! 
+//!				Elle correspond à l'encapsulation de tous les éléments 
+//!				nécessaire au programme requis :
+//!				 - gestion des arguments passés en ligne de commande
+//!				 - gestion des deux automates
+//!				 - lecture du fichier source caractère par caractère 
+//!					et assignation aux automates
+//!				 - gestion des exception des entrées / sorties
+//!				 - affichage des statistiques finales
+//!
+//!				De plus, XtractC possède deux classes internes utilisées 
+//!				pour la gestion d'exception (Exception et ParamException).
 //! \author		Alexandre Chartrand
 //! \author		Jérôme Combet-Blanc
 //! \version	1.0
@@ -40,7 +51,7 @@ class QExtentionFichier : public QGroupBox
 public:
 	//! Constructeur
 	QExtentionFichier(QWidget *parent = nullptr);
-	//! Destructeur
+	//! Destructeur par défaut
 	~QExtentionFichier();
 
 	//! Retourne l'extention desiré

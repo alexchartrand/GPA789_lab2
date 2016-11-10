@@ -4,15 +4,13 @@
 #include <QHboxlayout>
 #include <QVboxlayout>
 
-//Groupe pour la gestion de l'information concernant ce programme
+
 AboutTab::AboutTab(QWidget *parent)
 {
-	//Creation des variables
 	QPushButton *aboutButton = new QPushButton("À propos...");
 	QHBoxLayout *hLayout = new QHBoxLayout;
 	QVBoxLayout *vLayout = new QVBoxLayout;
 
-	//Configuration d'affichage
 	hLayout->addStretch();
 	hLayout->addWidget(aboutButton);
 	vLayout->addStretch();
@@ -20,19 +18,17 @@ AboutTab::AboutTab(QWidget *parent)
 
 	setLayout(vLayout);
 
-	//Connection de nos objet
 	connect(aboutButton, &QPushButton::clicked,
 		this, &AboutTab::showMessageBox);
 }
 
-// Fonction d'affichage des informations du programme
+
 void AboutTab::showMessageBox()
 {
-	//Creation des variables
 	QPixmap image = QPixmap("Resource/icon.png");
-	QMessageBox  about;
+	
 
-	//Configuration d'affichage
+	QMessageBox  about;
 	about.setIconPixmap(image);
 	about.setWindowTitle("À propos de XtractC");
 	about.setWindowIcon(image);

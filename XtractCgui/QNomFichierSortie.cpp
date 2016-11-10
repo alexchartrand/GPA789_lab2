@@ -22,6 +22,16 @@ QNomFichierSortie::QNomFichierSortie(QWidget *parent)
 	QLabel *texte2 = new QLabel("Débuter la numérotation à");
 	deb_num = new QSpinBox;
 	prefixe = new QLineEdit;
+	
+	//Connection de nos objet
+	connect(nom_fichier_sortie2, &QRadioButton::toggled,
+		texte1, &QLabel::setEnabled);
+	connect(nom_fichier_sortie2, &QRadioButton::toggled,
+		texte2, &QLabel::setEnabled);
+	connect(nom_fichier_sortie2, &QRadioButton::toggled,
+		prefixe, &QSpinBox::setEnabled);
+	connect(nom_fichier_sortie2, &QRadioButton::toggled,
+		deb_num, &QSpinBox::setEnabled);
 
 	//Initialisation du groupe
 	nom_fichier_sortie1->setChecked(true);
@@ -43,16 +53,6 @@ QNomFichierSortie::QNomFichierSortie(QWidget *parent)
 
 	//Affichage du groupe
 	setLayout(vbox1);
-
-	//Connection de nos objet
-	connect(nom_fichier_sortie2, &QRadioButton::toggled,
-		texte1, &QLabel::setEnabled);
-	connect(nom_fichier_sortie2, &QRadioButton::toggled,
-		texte2, &QLabel::setEnabled);
-	connect(nom_fichier_sortie2, &QRadioButton::toggled,
-		prefixe, &QSpinBox::setEnabled);
-	connect(nom_fichier_sortie2, &QRadioButton::toggled,
-		deb_num, &QSpinBox::setEnabled);
 }
 
 QNomFichierSortie::~QNomFichierSortie()
